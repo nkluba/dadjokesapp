@@ -4,6 +4,7 @@ import ControlPanel from './components/ControlPanel';
 import JokeList from './components/JokeList';
 import SelectedJoke from './components/SelectedJoke';
 import axios from 'axios';
+import './App.css';  // Import CSS
 
 interface Joke {
   id: string;
@@ -53,24 +54,30 @@ const App: React.FC = () => {
   return (
     <div className={`app ${theme}`}>
       <Navbar language={language} setLanguage={setLanguage} theme={theme} setTheme={setTheme} />
-      <ControlPanel
-        fetchJokes={fetchJokes}
-        fetchRandomJoke={fetchRandomJoke}
-        term={term}
-        setTerm={setTerm}
-        language={language} // Pass language prop
-      />
-      {view === 'list' && (
-        <JokeList
-          jokes={jokes}
-          setSelectedJoke={setSelectedJoke}
-        />
-      )}
-      {selectedJoke && (
-        <SelectedJoke
-          joke={selectedJoke}
+      <div className="control-panel">
+        <ControlPanel
+          fetchJokes={fetchJokes}
+          fetchRandomJoke={fetchRandomJoke}
+          term={term}
+          setTerm={setTerm}
           language={language} // Pass language prop
         />
+      </div>
+      {view === 'list' && (
+        <ul className="joke-list">
+          <JokeList
+            jokes={jokes}
+            setSelectedJoke={setSelectedJoke}
+          />
+        </ul>
+      )}
+      {selectedJoke && (
+        <div className="selected-joke">
+          <SelectedJoke
+            joke={selectedJoke}
+            language={language} // Pass language prop
+          />
+        </div>
       )}
     </div>
   );

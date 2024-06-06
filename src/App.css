@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App.css */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+}
+
+nav select {
+  margin: 5px;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.control-panel {
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.control-panel input, .control-panel button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1em;
+  width: 100%;
+}
+
+.joke-list {
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.joke-list li {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.selected-joke {
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.selected-joke p {
+  font-size: 1.2em;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.selected-joke button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+/* Responsiveness */
+@media (min-width: 600px) {
+  .control-panel {
+    flex-direction: row;
+    justify-content: space-between;
   }
-  to {
-    transform: rotate(360deg);
+
+  .control-panel input {
+    width: 60%;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .control-panel button {
+    width: auto;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

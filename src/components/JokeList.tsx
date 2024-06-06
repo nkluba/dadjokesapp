@@ -12,7 +12,7 @@ interface JokeListProps {
 
 const JokeList: React.FC<JokeListProps> = ({ jokes, setSelectedJoke }) => {
   return (
-    <ul>
+    <ul className="joke-list">
       {jokes.map((joke) => (
         <li key={joke.id} onClick={() => setSelectedJoke(joke.joke)}>
           {joke.joke}

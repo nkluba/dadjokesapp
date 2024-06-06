@@ -1,12 +1,12 @@
 import React from 'react';
-import translations from '../locales'; // Import translations
+import translations from '../locales';
 
 interface ControlPanelProps {
   fetchJokes: (term: string) => void;
   fetchRandomJoke: () => void;
   term: string;
   setTerm: (term: string) => void;
-  language: string; // Pass language as prop
+  language: string;
 }
 
 const ControlPanel: React.FC<ControlPanelProps> = ({
@@ -29,7 +29,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   };
 
   return (
-    <div>
+    <div className="control-panel">
       <input
         type="text"
         value={term}
