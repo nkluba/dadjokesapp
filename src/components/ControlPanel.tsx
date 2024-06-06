@@ -1,10 +1,12 @@
 import React from 'react';
+import translations from '../locales'; // Import translations
 
 interface ControlPanelProps {
   fetchJokes: (term: string) => void;
   fetchRandomJoke: () => void;
   term: string;
   setTerm: (term: string) => void;
+  language: string; // Pass language as prop
 }
 
 const ControlPanel: React.FC<ControlPanelProps> = ({
@@ -12,7 +14,10 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   fetchRandomJoke,
   term,
   setTerm,
+  language
 }) => {
+  const t = translations[language]; // Get translations
+
   const handleSearch = () => {
     fetchJokes(term);
     setTerm(''); // Clear the term after searching jokes
@@ -29,10 +34,10 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
         type="text"
         value={term}
         onChange={(e) => setTerm(e.target.value)}
-        placeholder="Enter topic"
+        placeholder={t.enterTopic}
       />
-      <button onClick={handleRandomJoke}>Get Random Joke</button>
-      <button onClick={handleSearch}>Browse Jokes</button>
+      <button onClick={handleRandomJoke}>{t.getRandomJoke}</button>
+      <button onClick={handleSearch}>{t.browseJokes}</button>
     </div>
   );
 };

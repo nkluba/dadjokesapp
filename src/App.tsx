@@ -58,9 +58,20 @@ const App: React.FC = () => {
         fetchRandomJoke={fetchRandomJoke}
         term={term}
         setTerm={setTerm}
+        language={language} // Pass language prop
       />
-      {view === 'list' && <JokeList jokes={jokes} setSelectedJoke={setSelectedJoke} />}
-      {selectedJoke && <SelectedJoke joke={selectedJoke} />}
+      {view === 'list' && (
+        <JokeList
+          jokes={jokes}
+          setSelectedJoke={setSelectedJoke}
+        />
+      )}
+      {selectedJoke && (
+        <SelectedJoke
+          joke={selectedJoke}
+          language={language} // Pass language prop
+        />
+      )}
     </div>
   );
 };

@@ -16,6 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage, theme, setTheme 
       <select value={language} onChange={handleLanguageChange}>
         <option value="en">English</option>
         <option value="et">Estonian</option>
+        <option value="ru">Russian</option>
       </select>
       <select value={theme} onChange={handleThemeChange}>
         <option value="light">Light</option>
