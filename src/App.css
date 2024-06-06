@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav {
@@ -45,7 +45,6 @@ nav select {
 .joke-list {
   width: 100%;
   max-width: 800px;
-  padding: 10px;
   list-style-type: none;
   padding: 0;
 }
@@ -72,6 +71,27 @@ nav select {
   margin-top: 10px;
   padding: 10px;
   font-size: 1em;
+}
+
+/* Light Theme */
+.app.light {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.app.light .joke-list li {
+  background-color: #fff;
+}
+
+/* Dark Theme */
+.app.dark {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.app.dark .joke-list li {
+  background-color: #333;
+  border-color: #555;
 }
 
 /* Responsiveness */
