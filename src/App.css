@@ -3,6 +3,10 @@ body {
   margin: 0;
   font-family: sans-serif;
   transition: background-color 0.3s, color 0.3s;
+  display: flex;             /* Added Flexbox to body */
+  justify-content: center;   /* Center horizontally */
+  align-items: center;       /* Center vertically */
+  height: 100vh;             /* Full viewport height */
 }
 
 body.light {
@@ -62,7 +66,8 @@ nav select {
   align-items: center;
 }
 
-.control-panel input, .control-panel button {
+.control-panel input,
+.control-panel button {
   margin: 5px;
   padding: 10px;
   font-size: 1em;
