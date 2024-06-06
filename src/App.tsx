@@ -31,6 +31,10 @@ const App: React.FC = () => {
   useEffect(() => {
     localStorage.setItem('language', language);
     localStorage.setItem('theme', theme);
+    // Apply theme class to body
+    if (document.body) {
+      document.body.className = theme;
+    }
   }, [language, theme]);
 
   const fetchJokes = async (term = '') => {
